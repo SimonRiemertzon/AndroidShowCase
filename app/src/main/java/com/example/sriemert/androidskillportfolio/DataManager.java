@@ -14,7 +14,7 @@ public class DataManager {
     private List<SkillInfo> mSkills = new ArrayList<>();
 
     public static DataManager getInstance() {
-        if(ourInstance == null) {
+        if (ourInstance == null) {
             ourInstance = new DataManager();
             ourInstance.initializeSkills();
         }
@@ -26,13 +26,13 @@ public class DataManager {
                 0,
                 "Taprecongnizers",
                 "Showcasing how to use taprecongnizers"));
+
     }
 
 
     public List<SkillInfo> getSkills() {
         return mSkills;
     }
-
 
 
 }

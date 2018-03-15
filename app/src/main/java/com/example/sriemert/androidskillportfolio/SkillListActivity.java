@@ -1,25 +1,24 @@
 package com.example.sriemert.androidskillportfolio;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 
 import java.util.List;
 
-public class SkillsActivity extends AppCompatActivity {
+public class SkillListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_skills);
+        setContentView(R.layout.activity_skill_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,8 +28,19 @@ public class SkillsActivity extends AppCompatActivity {
     private void initializeDisplayContent() {
         ListView listSkills = findViewById(R.id.list_skills);
         List<SkillInfo> skills = DataManager.getInstance().getSkills();
-        ArrayAdapter<SkillInfo> adapterSkills = new ArrayAdapter<SkillInfo>(this, android.R.layout.simple_list_item_1, skills);
+        ArrayAdapter<SkillInfo> adapterSkills = new ArrayAdapter<SkillInfo>(this,
+                android.R.layout.simple_list_item_1, skills);
         listSkills.setAdapter(adapterSkills);
+
+        listSkills.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(SkillListActivity.this, TapRecognizerActivity.class);
+                startActivity(intent);
+            }
+
+
+        });
     }
 
 

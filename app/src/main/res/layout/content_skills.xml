@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.sriemert.androidskillportfolio.SkillsActivity"
-    tools:showIn="@layout/activity_skills">
+    tools:context="com.example.sriemert.androidskillportfolio.SkillListActivity"
+    tools:showIn="@layout/activity_skill_list">
 
     <ListView
         android:id="@+id/list_skills"

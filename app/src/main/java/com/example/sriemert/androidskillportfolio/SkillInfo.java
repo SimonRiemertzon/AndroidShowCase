@@ -29,9 +29,8 @@ public final class SkillInfo {
 
     @Override
     public String toString() {
-        return getmSkillId() + "|" + getmTitle() + "|" + getmDescription();
+        return getmSkillId() + " | " + getmTitle() + " | " + getmDescription();
     }
-
 
 
 }
