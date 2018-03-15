@@ -5,17 +5,17 @@ package com.example.sriemert.androidskillportfolio;
  */
 
 public final class SkillInfo {
-    private final String mSkillId;
+    private final int mSkillId;
     private final String mTitle;
     private final String mDescription;
 
-    public SkillInfo(String skillId, String title, String description) {
+    public SkillInfo(int skillId, String title, String description) {
         mSkillId = skillId;
         mTitle = title;
         mDescription = description;
     }
 
-    public String getmSkillId() {
+    public int getmSkillId() {
         return mSkillId;
     }
 
@@ -29,8 +29,9 @@ public final class SkillInfo {
 
     @Override
     public String toString() {
-        return mTitle;
+        return getmSkillId() + "|" + getmTitle() + "|" + getmDescription();
     }
+
 
 
 }

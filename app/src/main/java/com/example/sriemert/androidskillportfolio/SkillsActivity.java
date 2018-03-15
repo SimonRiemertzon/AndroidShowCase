@@ -8,7 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
+
+import java.util.List;
 
 public class SkillsActivity extends AppCompatActivity {
 
@@ -19,9 +23,16 @@ public class SkillsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Spinner spinnerSkills = findViewById(R.id.spinner_skills);
-
+        initializeDisplayContent();
     }
+
+    private void initializeDisplayContent() {
+        ListView listSkills = findViewById(R.id.list_skills);
+        List<SkillInfo> skills = DataManager.getInstance().getSkills();
+        ArrayAdapter<SkillInfo> adapterSkills = new ArrayAdapter<SkillInfo>(this, android.R.layout.simple_list_item_1, skills);
+        listSkills.setAdapter(adapterSkills);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
