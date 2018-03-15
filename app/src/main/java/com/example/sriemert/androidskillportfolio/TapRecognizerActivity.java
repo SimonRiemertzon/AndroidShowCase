@@ -2,41 +2,59 @@ package com.example.sriemert.androidskillportfolio;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+
 public class TapRecognizerActivity extends AppCompatActivity {
-	private Button mAddButton;
-	private Button mSubtractButton;
-	private TextView mTextCounter;
+	private static final String TAG = "TapRecognizerActivity";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tap_recognizer);
+    private Button mAddButton;
+    private Button mSubtractButton;
+    private TextView mTextCounter;
+    private OnClickListener onClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int countValue = Integer.parseInt(mTextCounter.getText().toString());
 
-		initializeDisplayContent();
+            switch (view.getId()) {
+                case  R.id.button_taprcognizeractivity_add:
+                    countValue++;
+                    mTextCounter.setText(String.valueOf(countValue));
+                    break;
+                case R.id.button_taprcognizeractivity_subtract:
+                    countValue--;
+                    mTextCounter.setText(String.valueOf(countValue));
+	            default:
+		            Log.wtf(TAG, "Button not recognized");
 
-	}
+            }
+        }
+    };
 
-	private void initializeDisplayContent() {
-		mAddButton = findViewById(R.id.button_taprcognizeractivity_add);
-		mSubtractButton = findViewById(R.id.button_taprcognizeractivity_subtract);
-		mTextCounter = findViewById(R.id.textview_counter);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tap_recognizer);
 
-		mAddButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
+        initializeDisplayContent();
 
-				int countValue = Integer.parseInt(mTextCounter.getText().toString());
-				countValue++;
-				mTextCounter.setText(String.valueOf(countValue));
+    }
 
-			}
-		});
+    private void initializeDisplayContent() {
+        mAddButton = findViewById(R.id.button_taprcognizeractivity_add);
+        mSubtractButton = findViewById(R.id.button_taprcognizeractivity_subtract);
+        mTextCounter = findViewById(R.id.textview_counter);
+        mAddButton.setOnClickListener(onClickListener);
+        mSubtractButton.setOnClickListener(onClickListener);
+        mTextCounter.setOnClickListener(onClickListener);
 
+        
 
-	}
+    }
 
 }
