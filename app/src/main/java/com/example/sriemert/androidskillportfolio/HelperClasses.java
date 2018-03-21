@@ -14,6 +14,7 @@ public class HelperClasses {
 
 		int myLovelyVariable;
 
+
 		public MyLovelyOnclickListener(int myLovelyVariable) {
 			this.myLovelyVariable = myLovelyVariable;
 		}
@@ -22,8 +23,7 @@ public class HelperClasses {
 		@Override
 		public void onClick(View v)
 		{
-			int countValue = Integer.parseInt(mTextCounter.getText().toString());
-			mTextCounter.setText(String.valueOf(myLovelyVariable(countValue)));
+
 		}
 
 	};

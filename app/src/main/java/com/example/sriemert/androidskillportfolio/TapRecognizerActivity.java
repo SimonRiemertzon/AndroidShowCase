@@ -24,11 +24,11 @@ public class TapRecognizerActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case  R.id.button_taprcognizeractivity_add:
                     countValue++;
-                    mTextCounter.setText(String.valueOf(countValue));
+                    updateCounter(countValue);
                     break;
                 case R.id.button_taprcognizeractivity_subtract:
                     countValue--;
-                    mTextCounter.setText(String.valueOf(countValue));
+                    updateCounter(countValue);
 	            default:
 		            Log.wtf(TAG, "Button not recognized");
 
@@ -51,10 +51,10 @@ public class TapRecognizerActivity extends AppCompatActivity {
         mTextCounter = findViewById(R.id.textview_counter);
         mAddButton.setOnClickListener(onClickListener);
         mSubtractButton.setOnClickListener(onClickListener);
-        mTextCounter.setOnClickListener(onClickListener);
+    }
 
-        
-
+    private void updateCounter(int value) {
+	    mTextCounter.setText(String.valueOf(value));
     }
 
 }

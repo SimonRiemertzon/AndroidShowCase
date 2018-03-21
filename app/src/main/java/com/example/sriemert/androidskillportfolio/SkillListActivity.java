@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,8 +15,9 @@ import android.widget.ListView;
 import java.util.List;
 
 public class SkillListActivity extends AppCompatActivity {
+	private static final String TAG = "SkillListActivity" ;
 
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_list);
@@ -26,17 +28,32 @@ public class SkillListActivity extends AppCompatActivity {
     }
 
     private void initializeDisplayContent() {
-        ListView listSkills = findViewById(R.id.list_skills);
-        List<SkillInfo> skills = DataManager.getInstance().getSkills();
+        final ListView listSkills = findViewById(R.id.list_skills);
+        final List<SkillInfo> skills = DataManager.getInstance().getSkills();
         ArrayAdapter<SkillInfo> adapterSkills = new ArrayAdapter<SkillInfo>(this,
                 android.R.layout.simple_list_item_1, skills);
         listSkills.setAdapter(adapterSkills);
 
+	    //Starts an activity based on the ID in the list. 
         listSkills.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(SkillListActivity.this, TapRecognizerActivity.class);
-                startActivity(intent);
+            	Intent intent;
+            	switch (skills.get(i).getmSkillId()) {
+		            case 0:
+		            	intent = new Intent(SkillListActivity.this, TapRecognizerActivity.class);
+		            	break;
+		            case 1:
+		            	intent = new Intent(SkillListActivity.this, InteractiveStoryActivity.class);
+						break;
+		            default:
+		            	intent = null;
+			            Log.wtf(TAG, "No activity found for that manuitem.");
+	            }
+	            startActivity(intent);
+
+
+
             }
 
 

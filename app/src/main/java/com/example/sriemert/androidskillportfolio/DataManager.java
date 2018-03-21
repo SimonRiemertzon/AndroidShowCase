@@ -21,11 +21,16 @@ public class DataManager {
         return ourInstance;
     }
 
+    //Adds a menuitem for the skill-list.
     private void initializeSkills() {
         mSkills.add(new SkillInfo(
                 0,
                 "Taprecongnizers",
                 "Showcasing how to use taprecongnizers"));
+	    mSkills.add(new SkillInfo(
+			    1,
+			    "Interactive Story",
+			    "An interactive story where I learned several basic Java-programming elements"));
 
     }
 
