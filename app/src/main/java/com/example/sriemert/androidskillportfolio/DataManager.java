@@ -31,8 +31,7 @@ public class DataManager {
 			    1,
 			    "Interactive Story",
 			    "An interactive story where I learned several basic Java-programming elements"));
-
-    }
+	    }
 
 
     public List<SkillInfo> getSkills() {

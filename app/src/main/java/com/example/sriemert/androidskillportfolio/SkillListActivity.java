@@ -34,7 +34,7 @@ public class SkillListActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, skills);
         listSkills.setAdapter(adapterSkills);
 
-	    //Starts an activity based on the ID in the list. 
+	    //Starts an activity based on the ID in the list.
         listSkills.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -48,7 +48,7 @@ public class SkillListActivity extends AppCompatActivity {
 						break;
 		            default:
 		            	intent = null;
-			            Log.wtf(TAG, "No activity found for that manuitem.");
+			            Log.wtf(TAG, "Intent is null. No content provided for menuitem.");
 	            }
 	            startActivity(intent);
 
