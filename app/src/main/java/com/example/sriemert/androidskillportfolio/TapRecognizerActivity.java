@@ -29,6 +29,7 @@ public class TapRecognizerActivity extends AppCompatActivity {
                 case R.id.button_taprcognizeractivity_subtract:
                     countValue--;
                     updateCounter(countValue);
+                    break;
 	            default:
 		            Log.wtf(TAG, "Button not recognized");
 
