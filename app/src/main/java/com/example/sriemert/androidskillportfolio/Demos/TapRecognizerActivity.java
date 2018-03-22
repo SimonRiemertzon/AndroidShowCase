@@ -1,4 +1,4 @@
-package com.example.sriemert.androidskillportfolio;
+package com.example.sriemert.androidskillportfolio.Demos;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+import com.example.sriemert.androidskillportfolio.R;
 
 public class TapRecognizerActivity extends AppCompatActivity {
 	private static final String TAG = "TapRecognizerActivity";

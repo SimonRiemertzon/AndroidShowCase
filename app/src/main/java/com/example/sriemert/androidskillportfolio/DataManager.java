@@ -1,6 +1,7 @@
 package com.example.sriemert.androidskillportfolio;
 
-import java.lang.reflect.Array;
+import com.example.sriemert.androidskillportfolio.Demos.SkillList.SkillInfo;
+
 import java.util.ArrayList;
 import java.util.List;
 

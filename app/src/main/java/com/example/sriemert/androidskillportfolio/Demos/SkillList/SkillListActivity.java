@@ -1,4 +1,4 @@
-package com.example.sriemert.androidskillportfolio;
+package com.example.sriemert.androidskillportfolio.Demos.SkillList;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.sriemert.androidskillportfolio.DataManager;
+import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.InteractiveStoryActivity;
+import com.example.sriemert.androidskillportfolio.Demos.TapRecognizerActivity;
+import com.example.sriemert.androidskillportfolio.R;
 
 import java.util.List;
 

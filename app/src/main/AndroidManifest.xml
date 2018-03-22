@@ -11,7 +11,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
 		<activity
-			android:name=".SkillListActivity"
+			android:name=".Demos.SkillList.SkillListActivity"
 			android:label="@string/app_name"
 			android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>
@@ -21,10 +21,12 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".TapRecognizerActivity"
+			android:name=".Demos.TapRecognizerActivity"
 			android:label="@string/taprecognizer_activity_title">
 		</activity>
-		<activity android:name=".InteractiveStoryActivity">
+		<activity android:name=".Demos.InteractiveStory.InteractiveStoryActivity">
+		</activity>
+		<activity android:name=".Demos.InteractiveStory.StoryActivity">
 		</activity>
 	</application>
 

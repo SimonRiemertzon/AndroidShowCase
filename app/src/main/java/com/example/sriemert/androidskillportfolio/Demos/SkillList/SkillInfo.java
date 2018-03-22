@@ -1,4 +1,4 @@
-package com.example.sriemert.androidskillportfolio;
+package com.example.sriemert.androidskillportfolio.Demos.SkillList;
 
 /**
  * Created by sriemert on 2018-03-14.
