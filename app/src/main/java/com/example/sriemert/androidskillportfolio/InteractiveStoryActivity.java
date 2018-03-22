@@ -9,6 +9,8 @@ public class InteractiveStoryActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_interactive_story);
-		Toast.makeText(this, "Hello world!", Toast.LENGTH_SHORT).show();
+
 	}
+
+
 }
