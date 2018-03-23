@@ -1,14 +1,16 @@
-package com.example.sriemert.androidskillportfolio.Demos.InteractiveStory;
+package com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model.Page;
 import com.example.sriemert.androidskillportfolio.R;
 
 public class StoryActivity extends AppCompatActivity {
 	private static final String TAG = StoryActivity.class.getSimpleName();
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,16 +18,10 @@ public class StoryActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_story);
 
 		Intent intent = getIntent();
-
-		String name = intent.getStringExtra("name");
-		if (name == null || name.isEmpty()) {
-			name = "Friend";
-		}
-
+		String name = intent.getStringExtra(getString(R.string.key_name));
+		if (name == null || name.isEmpty()) {name = "Friend";}
 
 		Log.d(TAG, "This is name: " + name );
-
-
 	}
 
 

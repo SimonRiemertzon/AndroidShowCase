@@ -1,4 +1,4 @@
-package com.example.sriemert.androidskillportfolio.Demos.InteractiveStory;
+package com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.ui;
 
 import static android.view.View.*;
 
@@ -31,14 +31,12 @@ public class InteractiveStoryActivity extends AppCompatActivity {
 				startStory(name);
 			}
 		});
-
-
-
 	}
 
 	private void startStory(String name) {
 		Intent intent = new Intent(this, StoryActivity.class);
-		intent.putExtra("name", name);
+		String key = getString(R.string.key_name);
+		intent.putExtra(key, name);
 		startActivity(intent);
 
 	}

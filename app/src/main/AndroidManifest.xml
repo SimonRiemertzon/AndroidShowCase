@@ -24,9 +24,9 @@
 			android:name=".Demos.TapRecognizerActivity"
 			android:label="@string/taprecognizer_activity_title">
 		</activity>
-		<activity android:name=".Demos.InteractiveStory.InteractiveStoryActivity">
+		<activity android:name=".Demos.InteractiveStory.ui.InteractiveStoryActivity">
 		</activity>
-		<activity android:name=".Demos.InteractiveStory.StoryActivity">
+		<activity android:name=".Demos.InteractiveStory.ui.StoryActivity">
 		</activity>
 	</application>
 

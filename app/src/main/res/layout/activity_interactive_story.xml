@@ -5,9 +5,10 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".Demos.InteractiveStory.InteractiveStoryActivity">
+	tools:context=".Demos.InteractiveStory.ui.InteractiveStoryActivity">
 	
 	<ImageView
+		android:contentDescription="@string/signals_from_mars_title_image"
 		android:id="@+id/titleImageView"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
@@ -19,7 +20,7 @@
 		android:id="@+id/startButton"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:text="START YOUR ADVENTURE" app:layout_constraintBottom_toBottomOf="parent"
+		android:text="@string/start_your_adventure" app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"/>
 	<EditText
@@ -28,7 +29,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="8dp" android:background="@android:color/white"
 		android:ems="10"
-		android:hint="Enter your name"
+		android:hint="@string/enter_your_name"
 		android:inputType="textCapWords|textPersonName"
 		android:maxLength="30"
 		app:layout_constraintBottom_toTopOf="@+id/startButton"

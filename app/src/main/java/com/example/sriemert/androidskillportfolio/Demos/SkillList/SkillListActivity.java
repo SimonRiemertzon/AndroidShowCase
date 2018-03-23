@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.sriemert.androidskillportfolio.DataManager;
-import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.InteractiveStoryActivity;
+import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.ui.InteractiveStoryActivity;
 import com.example.sriemert.androidskillportfolio.Demos.TapRecognizerActivity;
 import com.example.sriemert.androidskillportfolio.R;
 
