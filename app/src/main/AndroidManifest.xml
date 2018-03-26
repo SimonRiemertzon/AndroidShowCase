@@ -26,7 +26,8 @@
 		</activity>
 		<activity android:name=".Demos.InteractiveStory.ui.InteractiveStoryActivity">
 		</activity>
-		<activity android:name=".Demos.InteractiveStory.ui.StoryActivity">
+		<activity android:name=".Demos.InteractiveStory.ui.StoryActivity"
+		          android:parentActivityName= ".Demos.InteractiveStory.ui.InteractiveStoryActivity">
 		</activity>
 	</application>
 

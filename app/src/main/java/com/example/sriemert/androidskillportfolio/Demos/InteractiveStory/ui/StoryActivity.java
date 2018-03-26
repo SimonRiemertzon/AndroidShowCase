@@ -16,6 +16,8 @@ import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model.P
 import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model.Story;
 import com.example.sriemert.androidskillportfolio.R;
 
+import java.util.Stack;
+
 public class StoryActivity extends AppCompatActivity {
 	private static final String TAG = StoryActivity.class.getSimpleName();
 	private Story story;
@@ -24,6 +26,8 @@ public class StoryActivity extends AppCompatActivity {
 	private Button choice2Button;
 	private String name;
 	private TextView storyTextView;
+	private Stack<Integer> pageStack  = new Stack<Integer>();
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,8 @@ public class StoryActivity extends AppCompatActivity {
 	}
 
 	private void loadPage(int pageNumber) {
+		pageStack.push(pageNumber);
+
 		final Page page = story.getPage(pageNumber);
 
 		Drawable image = ContextCompat.getDrawable(this, page.getImageId());
@@ -95,4 +101,14 @@ public class StoryActivity extends AppCompatActivity {
 		});
 	}
 
+	@Override
+	public void onBackPressed() {
+		pageStack.pop();
+		if(pageStack.isEmpty()){
+			super.onBackPressed();
+		}
+		else {
+			loadPage(pageStack.pop());
+		}
+	}
 }
