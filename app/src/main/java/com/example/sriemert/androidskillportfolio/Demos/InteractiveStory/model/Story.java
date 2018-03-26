@@ -1,11 +1,15 @@
 package com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model;
 
+import android.support.design.widget.TabLayout;
+import android.util.Log;
+
 import com.example.sriemert.androidskillportfolio.R;
 
 /**
  * Created by sirie1 on 2018-03-23.
  */
 public class Story {
+	private static final String TAG = Story.class.getSimpleName();
 	private Page[] pages;
 
 	public Story() {
@@ -40,9 +44,12 @@ public class Story {
 
 		pages[6] = new Page(R.drawable.page6, R.string.page6);
 
-
-
 	}
 
-
+	public Page getPage(int pageNumber) {
+		if (pageNumber > pages.length) {
+			Log.d(TAG, "getPage: Requested pageNumber is out of bounds");
+		}
+		return pages[pageNumber];
+	}
 }
