@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model.Page;
 import com.example.sriemert.androidskillportfolio.Demos.InteractiveStory.model.Story;
@@ -19,7 +21,8 @@ public class StoryActivity extends AppCompatActivity {
 	private ImageView storyImageView;
 	private Button choice1Button;
 	private Button choice2Button;
-
+    private String name;
+	private TextView storyTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +31,10 @@ public class StoryActivity extends AppCompatActivity {
 		storyImageView = findViewById(R.id.storyImageView);
 		choice1Button = findViewById(R.id.choice1Button);
 		choice2Button = findViewById(R.id.choice2Button);
+		storyTextView = findViewById(R.id.storyTextView);
 
 		Intent intent = getIntent();
-		String name = intent.getStringExtra(getString(R.string.key_name));
+		name = intent.getStringExtra(getString(R.string.key_name));
 		if (name == null || name.isEmpty()) {name = "Friend";}
 
 		Log.d(TAG, "This is name: " + name );
@@ -44,6 +48,27 @@ public class StoryActivity extends AppCompatActivity {
 
 		Drawable image = ContextCompat.getDrawable(this, page.getImageId());
 		storyImageView.setImageDrawable(image);
+
+		String pageText = getString(page.getTextId());
+		// Add name if placeholder included. Wont add if not
+		pageText = String.format(pageText, name);
+		storyTextView.setText(pageText);
+
+		choice1Button.setText(page.getChoice1().getTextId());
+		choice2Button.setText(page.getChoice2().getTextId());
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

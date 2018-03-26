@@ -11,4 +11,12 @@ public class Choice {
 		this.textId = textId;
 		this.nextPage = nextPage;
 	}
+
+	public int getTextId() {
+		return textId;
+	}
+
+	public int getNextPage() {
+		return nextPage;
+	}
 }

@@ -22,7 +22,7 @@
 				android:adjustViewBounds="true" android:scaleType="fitXY"
 				tools:src="@drawable/page0" android:contentDescription="@string/story_image_content_description"/>
 			<TextView
-				android:id="@+id/textView2"
+				android:id="@+id/storyTextView"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="16dp"
