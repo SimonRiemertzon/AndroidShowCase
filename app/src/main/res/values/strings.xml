@@ -55,5 +55,15 @@
 	<string name="enter_your_name">Enter your name</string>
 	<string name="story_image_content_description">Story page image</string>
 	<string name="play_again_button_pressed">Play Again</string>
+	<string name="skill0_title">Taprecongnizers</string>
+	<string name="skill0_description">Showcasing how to use taprecongnizers</string>
+	<string name="skill1_title">Interactive Story</string>
+	<string name="skill1_description">An interactive story where I learned several basic
+		Java-programming elements
+	</string>
+	<string name="skill2_title">Recyclerview and Database</string>
+	<string name="skill2_description">Showcasing how I use recycler view and fill it with data from
+		database
+	</string>
 
 </resources>
