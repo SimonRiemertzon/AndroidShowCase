@@ -4,14 +4,18 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 
 /**
  * Created by sirie1 on 2018-03-22.
  */
 public class AndroidShowCaseApp extends Application {
+
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		DataManager.init(this);
 
 		registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
 			@Override
